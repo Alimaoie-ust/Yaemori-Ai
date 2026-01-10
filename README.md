@@ -23,6 +23,18 @@
 
 ---
 
+## ⚡ الميزات الرئيسية | Main Features
+
+<p align="center">
+  <b>🤖 ذكاء اصطناعي متقدم (GPT-4)</b> • 
+  <b>🛡️ نظام حماية متطور</b> • 
+  <b>🎮 ألعاب وتفاعل</b><br>
+  <b>📥 تحميل وسائط فائقة السرعة</b> • 
+  <b>⚙️ تخصيص كامل للإعدادات</b>
+</p>
+
+---
+
 ## 🤖 About Yaemori AI | نبذة عن المشروع
 
 <table align="center">
@@ -47,14 +59,10 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Alimaoie-ust.png" width="150" style="border-radius: 50%; border: 4px solid #7f00ff;">
+  <img src="https://github.com/Alimaoie-ust.png" width="150" style="border-radius: 50%; border: 4px solid #7f00ff; box-shadow: 0 0 20px #7f00ff;">
   <br>
   <b>✨ Ali Maoie ✨</b><br>
   <i>Leading the Bot Development Revolution</i>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Alimaoie-ust&layout=compact&theme=tokyonight&hide_border=false" alt="Ali Maoie Top Languages" />
 </p>
 
 ---
