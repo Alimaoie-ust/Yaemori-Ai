@@ -448,26 +448,9 @@ originalConsoleMethod.apply(console, arguments)
 setInterval(async () => {
     if (stopped === 'close' || !conn || !conn.user) return
     await clearTmp()
-    conn.sendMessage(global.owner[0][0] + '@s.whatsapp.net', { 
-        text: '✅ *تـم تـنـظـيـف الـمـلـفـات الـمـؤقـتـة*\n\nتم مسح مجلد الـ TMP بنجاح لتحسين سرعة واستجابة البوت.',
-        contextInfo: {
-            isForwarded: true,
-            forwardingScore: 1,
-            forwardedNewsletterMessageInfo: {
-                newsletterJid: "120363422709274212@newsletter",
-                newsletterName: "NATALY AI | هيا نحو النجاح 🧑‍💻"
-            },
-            externalAdReply: {
-                title: "NATALY AI - System Cleaner",
-                body: "تصفية ذاكرة التخزين المؤقت",
-                thumbnailUrl: "https://raw.githubusercontent.com/Alismbot/Yaemori-info/refs/heads/main/images/Yaemori2.jpg",
-                mediaType: 1,
-                renderLargerThumbnail: true
-            }
-        }
-    })
-    console.log(chalk.bold.cyanBright(`\n╭» 🟢 MULTIMEDIA 🟢\n│→ TMP FOLDER FILES DELETED\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
+    console.log(chalk.bold.cyanBright(`\n╭» 🟢 SYSTEM 🟢\n│→ TMP FOLDER CLEANED (SILENT MODE)\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️`))
 }, 1000 * 60 * 4)
+
 
 //setInterval(async () => {
 //if (stopped === 'close' || !conn || !conn.user) return
