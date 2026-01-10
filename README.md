@@ -72,7 +72,7 @@
 ## 🔗 Connection Center | مراكز الاتصال
 
 <p align="center">
-<a href="https://whatsapp.com/channel/0029Vb71THB0bIdswhCzVJ0f"><img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
+<a href="[https://whatsapp.com/channel/0029Vb71THB0bIdswhCzVJ0f](https://whatsapp.com/channel/0029Vb725RMAYlUTghCmVD3s)"><img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 <a href="https://instagram.com/ali_maoie_v"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
 <a href="https://youtube.com/@newsportintern2831"><img src="https://img.shields.io/badge/YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
 <a href="https://github.com/Alimaoie-ust"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"></a>
