@@ -12,6 +12,7 @@ import lodash from 'lodash'
 import chalk from 'chalk'
 import syntaxerror from 'syntax-error'
 import {tmpdir} from 'os'
+import os from 'os'
 import {format} from 'util'
 import boxen from 'boxen'
 import P from 'pino'
@@ -179,6 +180,7 @@ console.log(chalk.black(chalk.bgGreen(`👑 LINK CODE 👑`)), chalk.black(chalk
 }
 
 conn.isInit = false;
+conn.welcomeSent = false;
 conn.well = false;
 //conn.logger.info(`🔵  H E C H O\n`)
 
@@ -205,8 +207,37 @@ if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
 console.log(chalk.bold.yellow(`\n✅ SCAN THE QR CODE EXPIRES IN 45 SECONDS`))}
 }
-if (connection == 'open') {
-console.log(boxen(chalk.bold(' CONNECTED WITH WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: '', float: '' }))}
+if (connection == 'open' && !conn.welcomeSent) {
+    conn.welcomeSent = true; // نضع القفل هنا لمنع التكرار
+    const deviceName = os.hostname();
+    const message = `• *معلومات*: البوت نشط الآن\n
+◦ *المنصة*: ${os.platform()} ${os.release()}
+◦ *جهاز*: ${deviceName}
+◦ *الوقت المتصل*: ${new Date().toLocaleString()}\n\n قناتي على الواتساب للمزيد من المعلومات \nhttps://whatsapp.com/channel/0029Vb71THB0bIdswhCzVJ0f`;
+
+    this.sendMessage(global.owner[0][0] + `@s.whatsapp.net`, {
+        video: { url: "https://raw.githubusercontent.com/Alismbot/Yaemori-info/refs/heads/main/Video/Menu/MENU1_1.mp4" },
+        gifPlayback: true,
+        caption: message,
+        contextInfo: {
+            isForwarded: true,
+            forwardingScore: 1,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: "120363422709274212@newsletter",
+                newsletterName: "Yaemori AI | هيا نحو النجاح 🧑‍🏫"
+            },
+            externalAdReply: {
+                title: "Yaemori AI",
+                body: "نظام التشغيل نشط",
+                thumbnailUrl: "https://raw.githubusercontent.com/Alismbot/Yaemori-info/refs/heads/main/images/Yaemori2.jpg",
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    });
+}
+
+
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
 if (reason === DisconnectReason.badSession) {
@@ -415,9 +446,28 @@ originalConsoleMethod.apply(console, arguments)
 }}
 
 setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await clearTmp()
-console.log(chalk.bold.cyanBright(`\n╭» 🟢 MULTIMEDIA 🟢\n│→ TMP FOLDER FILES DELETED\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))}, 1000 * 60 * 4) // 4 min 
+    if (stopped === 'close' || !conn || !conn.user) return
+    await clearTmp()
+    conn.sendMessage(global.owner[0][0] + '@s.whatsapp.net', { 
+        text: '✅ *تـم تـنـظـيـف الـمـلـفـات الـمـؤقـتـة*\n\nتم مسح مجلد الـ TMP بنجاح لتحسين سرعة واستجابة البوت.',
+        contextInfo: {
+            isForwarded: true,
+            forwardingScore: 1,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: "120363422709274212@newsletter",
+                newsletterName: "NATALY AI | هيا نحو النجاح 🧑‍💻"
+            },
+            externalAdReply: {
+                title: "NATALY AI - System Cleaner",
+                body: "تصفية ذاكرة التخزين المؤقت",
+                thumbnailUrl: "https://raw.githubusercontent.com/Alismbot/Yaemori-info/refs/heads/main/images/Yaemori2.jpg",
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    })
+    console.log(chalk.bold.cyanBright(`\n╭» 🟢 MULTIMEDIA 🟢\n│→ TMP FOLDER FILES DELETED\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
+}, 1000 * 60 * 4)
 
 //setInterval(async () => {
 //if (stopped === 'close' || !conn || !conn.user) return
