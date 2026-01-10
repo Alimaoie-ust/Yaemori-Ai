@@ -59,10 +59,12 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Alimaoie-ust.png" width="150" height="150" style="border-radius: 50%; border: 4px solid #7f00ff; object-fit: cover; box-shadow: 0 0 20px #7f00ff;">
+  <a href="https://github.com/Alimaoie-ust">
+    <img src="https://images.weserv.nl/?url=https://github.com/Alimaoie-ust.png?v=4&w=200&h=200&fit=cover&mask=circle&maxage=7d" alt="Ali Maoie" />
+  </a>
   <br>
   <b>✨ Ali Maoie ✨</b><br>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FFCC&center=true&vCenter=true&width=400&lines=Leading+the+Bot+Development+Revolution;Creating+the+Future+of+AI;Expert+in+Node.js+Automations" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FFCC&center=true&vCenter=true&width=500&lines=Leading+the+Bot+Development+Revolution;Creating+the+Future+of+AI;Expert+in+Node.js+Automations" alt="Typing SVG" />
 </p>
 
 ---
