@@ -23,29 +23,27 @@
 
 ---
 
-## 🤖 About Yaemori AI | نبذة عن العبقري
+## 🤖 About Yaemori AI | نبذة عن النظام
 
 <table align="center">
 <tr>
 <td>
 <h3>🇬🇧 English</h3>
-Experience the next generation of automation. <b>Yaemori AI</b> is not just a handler; it's a sophisticated neural engine built to redefine your WhatsApp experience with neon precision and lightning speed.
+Experience the next generation of automation. <b>Yaemori AI</b> is a sophisticated system built to redefine your WhatsApp experience with neon precision and lightning speed.
 </td>
 <td>
 <h3>🇲🇦 العربية</h3>
-اختبر الجيل القادم من الأتمتة. <b>Yaemori AI</b> ليس مجرد بوت عادي، بل هو محرك عصبي متطور صُمم ليعيد تعريف تجربتك على واتساب بدقة النيون وسرعة البرق.
+اختبر الجيل القادم من الأنظمة الذكية. <b>Yaemori AI</b> هو نظام متطور صُمم ليعيد تعريف تجربتك على واتساب بدقة النيون الفائقة وسرعة البرق الخاطفة.
 </td>
 </tr>
 </table>
 
 ---
 
-## 👑 The Architect | مهندس النظام
+## 👑 The Architect | مطور النظام
 
 <p align="center">
-  <a href="https://github.com/Alimaoie-ust">
-    <img src="https://img.shields.io/badge/DEVELOPER-ALI%20MAOIE-00ffcc?style=for-the-badge&logo=github&logoColor=black">
-  </a>
+  <img src="https://img.shields.io/badge/DEVELOPER-ALI%20MAOIE-00ffcc?style=for-the-badge&logo=github&logoColor=black">
 </p>
 
 <p align="center">
@@ -56,7 +54,7 @@ Experience the next generation of automation. <b>Yaemori AI</b> is not just a ha
 </p>
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=Alimaoie-ust&show_icons=true&theme=neon&hide_border=true&bg_color=00000000" alt="Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Alimaoie-ust&show_icons=true&theme=neon&hide_border=true&bg_color=00000000" alt="Ali Maoie Stats" />
 </p>
 
 ---
