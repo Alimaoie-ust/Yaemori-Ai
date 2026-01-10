@@ -26,7 +26,7 @@
 ## ⚡ الميزات الرئيسية | Main Features
 
 <p align="center">
-  <b>🤖 ذكاء اصطناعي متقدم (GPT-4)</b> • 
+  <b>🤖 ذكاء اصطناعي متقدم</b> • 
   <b>🛡️ نظام حماية متطور</b> • 
   <b>🎮 ألعاب وتفاعل</b><br>
   <b>📥 تحميل وسائط فائقة السرعة</b> • 
@@ -59,10 +59,10 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Alimaoie-ust.png" width="150" style="border-radius: 50%; border: 4px solid #7f00ff; box-shadow: 0 0 20px #7f00ff;">
+  <img src="https://github.com/Alimaoie-ust.png" width="150" height="150" style="border-radius: 50%; border: 4px solid #7f00ff; object-fit: cover; box-shadow: 0 0 20px #7f00ff;">
   <br>
   <b>✨ Ali Maoie ✨</b><br>
-  <i>Leading the Bot Development Revolution</i>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FFCC&center=true&vCenter=true&width=400&lines=Leading+the+Bot+Development+Revolution;Creating+the+Future+of+AI;Expert+in+Node.js+Automations" alt="Typing SVG" />
 </p>
 
 ---
