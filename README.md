@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&pause=1000&color=7F00FF&center=true&vCenter=true&width=500&lines=🌌+YAEMORI+AI+-+V2;The+Future+of+Intelligence;Powerful+WhatsApp+Assistant;Next-Gen+Experience+2026" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&pause=1000&color=7F00FF&center=true&vCenter=true&width=500&lines=🌌+YAEMORI+AI+-+V2;Powerful+WhatsApp+Assistant;Developed+by+Ali+Maoie;Next-Gen+Experience+2026" alt="Typing SVG" />
 </h1>
 
 <p align="center">
@@ -29,7 +29,7 @@
 <tr>
 <td>
 <h3>🇬🇧 English</h3>
-<b>Yaemori AI</b> is a cutting-edge WhatsApp assistant designed to streamline tasks with smart AI integration, high-speed processing, and a wide array of innovative features for groups and individuals.
+<b>Yaemori AI</b> is a cutting-edge WhatsApp assistant designed to streamline tasks with smart AI integration, high-speed processing, and a wide array of innovative features.
 </td>
 <td>
 <h3>🇲🇦 العربية</h3>
@@ -54,17 +54,18 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Alimaoie-ust&show_icons=true&theme=tokyonight&hide_border=false&count_private=true" alt="Ali Maoie GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Alimaoie-ust&layout=compact&theme=tokyonight&hide_border=false" alt="Ali Maoie Top Languages" />
 </p>
 
 ---
 
-## 🔗 Official Links | الروابط الرسمية
+## 🔗 Connection Center | مراكز الاتصال
 
 <p align="center">
-<a href="https://whatsapp.com/channel/0029Vb71THB0bIdswhCzVJ0f"><img src="https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
+<a href="https://whatsapp.com/channel/0029Vb71THB0bIdswhCzVJ0f"><img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 <a href="https://instagram.com/ali_maoie_v"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
-<a href="https://github.com/Alimaoie-ust"><img src="https://img.shields.io/badge/GitHub_Profile-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://youtube.com/@newsportintern2831"><img src="https://img.shields.io/badge/YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
+<a href="https://github.com/Alimaoie-ust"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
 ---
