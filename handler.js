@@ -36,6 +36,7 @@ const isROwner = [...global.owner.map(([number]) => number)]
   .includes(m.sender)
 
 const isOwner = isROwner || m.fromMe
+if (!m.isGroup && global.db.data.settings[this.user.jid].antiprivate && !isOwner) return
 const isPrems = isROwner || global.db.data.users[m.sender]?.premiumTime > 0
 // قراءة ضغط الزر
 // قراءة كل أنواع ضغط الأزرار
@@ -72,7 +73,15 @@ if (!isNumber(user.joincount)) user.joincount = 1
 if (!isNumber(user.money)) user.money = 150
 if (!isNumber(user.chocolates)) user.chocolates = 10
 if (!('registered' in user)) user.registered = false
-
+if (!('menuMode' in user)) user.menuMode = 'list' 
+if (!('autodownload' in user)) user.autodownload = false
+if (!('instadl' in user)) user.instadl = false
+if (!('ytdl' in user)) user.ytdl = false
+if (!('mp3dl' in user)) user.mp3dl = false
+if (!('tikdl' in user)) user.tikdl = false
+if (!('pint' in user)) user.pint = false
+if (!('fbv' in user)) user.fbv = false
+if (!('fb3' in user)) user.fb3 = false
 if (!user.registered) {
 if (!('name' in user)) user.name = m.name
 if (!('age' in user)) user.age = 0
@@ -132,64 +141,155 @@ regTime: -1,
 rendang: 0, 
 }
 let chat = global.db.data.chats[m.chat]
-if (typeof chat !== 'object')
-global.db.data.chats[m.chat] = {}
-
+if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
 if (chat) {
-if (!('isBanned' in chat)) chat.isBanned = false         
-if (!('welcome' in chat)) chat.welcome = true      
-if (!('detect' in chat)) chat.detect = true               
-if (!('sWelcome' in chat)) chat.sWelcome = ''          
-if (!('sBye' in chat)) chat.sBye = ''                    
-if (!('sPromote' in chat)) chat.sPromote = ''             
-if (!('sDemote' in chat)) chat.sDemote = ''
-if (!('sCondition' in chat)) chat.sCondition = JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}])                   
-if (!('nsfw' in chat)) chat.nsfw = false                    
-if (!('antiLink' in chat)) chat.antiLink = false    
-if (!('antiver' in chat)) chat.antiver = false
-          
-if (!('modoadmin' in chat)) chat.modoadmin = false    
-if (!isNumber(chat.expired)) chat.expired = 0
-} else
-global.db.data.chats[m.chat] = {
-isBanned: false,
-welcome: true,
-detect: true,
-sWelcome: '',
-sBye: '',
-sPromote: '',
-sDemote: '', 
-sCondition: JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}]), 
-nsfw: false,
-antiLink: false,
-antiver: false,
-modoadmin: false,
-expired: 0,
+    if (!('isBanned' in chat)) 
+    chat.isBanned = false        
+     
+    if (!('welcome' in chat)) 
+    chat.welcome = true      
+    
+    if (!('detect' in chat)) 
+    chat.detect = true         
+     
+    if (!('onlyarabs' in chat))
+    chat.onlyarabs = false 
+              
+    if (!('sWelcome' in chat)) 
+    chat.sWelcome = ''   
+           
+    if (!('sBye' in chat)) 
+    chat.sBye = ''          
+              
+    if (!('nsfw' in chat)) 
+    chat.nsfw = false        
+                
+    if (!('antiLink' in chat)) 
+    chat.antiLink = false    
+    
+    if (!('antiviewonce' in chat)) 
+    chat.antiviewonce = false
+    
+    if (!('adminmode' in chat)) 
+    chat.adminmode = false    
+    
+    if (!('antibot' in chat)) 
+    chat.antibot = false
+    
+    if (!('antifake' in chat)) 
+    chat.antifake = false
+    
+    if (!('antidelete' in chat)) 
+    chat.antidelete = false
+    
+    if (!('reaction' in chat)) 
+    chat.reaction = false
+    
+    if (!('audios' in chat)) 
+    chat.audios = false
+    
+    if (!('simi' in chat)) 
+    chat.simi = false
+    
+    if (!('autodownload' in chat)) 
+    chat.autodownload = false
+    
+    if (!('instadl' in chat)) chat.instadl = false
+    if (!('ytdl' in chat)) chat.ytdl = false
+    if (!('mp3dl' in chat)) chat.mp3dl = false
+    if (!('tikdl' in chat)) chat.tikdl = false
+    if (!('pint' in chat)) chat.pint = false
+    if (!('fbv' in chat)) chat.fbv = false
+    if (!('fb3' in chat)) chat.fb3 = false
+    if (!isNumber(chat.expired)) chat.expired = 0
+} else global.db.data.chats[m.chat] = {
+    isBanned: false,
+    welcome: true,
+    detect: true,
+    onlyarabs: false,
+    sWelcome: '',
+    sBye: '',
+    nsfw: false,
+    antiLink: false,
+    antiviewonce: false,
+    adminmode: false,
+    antibot: false,
+    antifake: false,
+    antidelete: false,
+    reaction: false,
+    autodownload: false,
+    instadl: false,
+    ytdl: false,
+    mp3dl: false,
+    tikdl: false,
+    pint: false,
+    fbv: false,
+    fb3: false,
+    audios: false,
+    simi: false,
+    expired: 0,
 }
 let settings = global.db.data.settings[this.user.jid]
 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
 if (settings) {
-if (!('self' in settings)) settings.self = false
-if (!('autoread' in settings)) settings.autoread = false
-if (!('restrict' in settings)) settings.restrict = false
-if (!('jadibotmd' in settings)) settings.jadibotmd = false  
-if (!('botcommandCount' in settings)) settings.botcommandCount = 0
-if (!('channel' in settings)) settings.channel = false
+    if (!('self' in settings)) settings.self = false
+    if (!('autoread' in settings)) settings.autoread = false
+    if (!('restrict' in settings)) settings.restrict = false
+    if (!('jadibotmd' in settings)) settings.jadibotmd = false  
+    if (!('botcommandCount' in settings)) settings.botcommandCount = 0
+    if (!('channel' in settings)) settings.channel = false
+    if (!('Dfailvoice' in settings)) settings.Dfailvoice = false
+    if (!('Dfailtext' in settings)) settings.Dfailtext = true
+    // الميزات الجديدة بالإنجليزية
+    if (!('antiprivate' in settings)) settings.antiprivate = false
+    if (!('antispam' in settings)) settings.antispam = false
+    if (!('autobio' in settings)) settings.autobio = false
+    if (!('autodownload' in settings)) settings.autodownload = false
+    if (!('instadl' in settings)) settings.instadl = false
+    if (!('ytdl' in settings)) settings.ytdl = false
+    if (!('mp3dl' in settings)) settings.mp3dl = false
+    if (!('tikdl' in settings)) settings.tikdl = false
+    if (!('pint' in settings)) settings.pint = false
+    if (!('fbv' in settings)) settings.fbv = false
+    if (!('fb3' in settings)) settings.fb3 = false
 } else global.db.data.settings[this.user.jid] = {
-self: false,
-autoread: false,
-restrict: false, 
-jadibotmd: true,
-botcommandCount: 0,
-channel: false
-}} catch (e) {
-console.error(e)
+    self: false,
+    autoread: false,
+    restrict: false, 
+    jadibotmd: true,
+    botcommandCount: 0,
+    channel: false,
+    antiprivate: false,
+    antispam: false,
+    autobio: false,
+    autodownload: false,
+    instadl: false,
+    ytdl: false,
+    mp3dl: false,
+    tikdl: false,
+    pint: false,
+    fbv: false,
+    fb3: false,
+    Dfailvoice: false,
+    Dfailtext: true
 }
+} catch (e) {
+    console.error(e)
+}
+
 
                 if (typeof m.text !== "string")
             m.text = ""
-            // ❌ منع الأوامر في قنوات واتساب من البداية
-// ❌ منع الأوامر في قنوات واتساب
+// ===== Reply Menu Detector =====
+if (
+  m.quoted &&
+  m.quoted.text &&
+  m.quoted.text.includes('📂 أقسام البوت') &&
+  /^[0-9]+$/.test(m.text)
+) {
+  m.isReplyMenu = true
+  m.replyMenuIndex = parseInt(m.text)
+}
 if (
     isChannel &&
     !global.db.data.settings[this.user.jid].channel &&
@@ -377,7 +477,7 @@ if (typeof m.text !== 'string') m.text = '';
          }}
 
 let hl = _prefix 
-let adminMode = global.db.data.chats[m.chat].modoadmin
+let adminMode = global.db.data.chats[m.chat].adminmode
 let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
 if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return   
 if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { //número bot owner
@@ -529,7 +629,7 @@ if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
 } catch (e) {
 console.log(m, m.quoted, e)}
 let settingsREAD = global.db.data.settings[this.user.jid] || {}  
-if (opts['autoread']) await this.readMessages([m.key])
+if (global.db.data.settings[this.user.jid].autoread || opts['autoread']) await this.readMessages([m.key])
 }}
 
 // دالة خاصة بالـ unregistered users فقط
@@ -564,15 +664,41 @@ global.sendListButton = async (conn, jid, title, text, footer, sections) => {
     return conn.sendMessage(jid, listMessage);
 };
 
+global.dfail = async (type, m, conn) => {
+  const settings = global.db.data.settings[conn.user.jid] || {}
 
-global.dfail = (type, m, conn) => {
-const msg = {
-rowner: '「👑」 *هذه الميزة خاصة بمنشئ البوت فقط*\n\n> ALI-Maoie.', 
-owner: '「👑」 *هذه الميزة خاصة بمطوّر البوت فقط.*', 
-premium: '「🍧」 *هذه الميزة مخصّصة لمستخدمي البريميوم فقط.*',  
-private: '「🍭」 *هذا الأمر يعمل في الدردشة الخاصة فقط.*', 
-admin: '「👑」 *هذا الأمر مخصّص للمشرفين فقط.*', 
-botAdmin: '「🚩」 *لاستخدام هذه الميزة يجب أن أكون مشرفًا.*', 
-restrict: '「💫」 *هذه الميزة معطّلة حاليًا.*'
-}[type];
-if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}
+  const textMsg = {
+    rowner:   '「👑」 هذه الميزة خاصة بمنشئ البوت فقط',
+    owner:    '「👑」 هذه الميزة خاصة بمطوّر البوت',
+    premium:  '「🍧」 هذه الميزة لمستخدمي البريميوم فقط',
+    private:  '「🍭」 هذا الأمر يعمل في الخاص فقط',
+    admin:    '「👑」 هذا الأمر مخصص للمشرفين فقط',
+    botAdmin: '「🚩」 يجب أن أكون مشرفًا لاستخدام هذا الأمر',
+    restrict: '「💫」 هذه الميزة معطّلة حاليًا'
+  }[type]
+
+  /* 🔊 وضع الصوت + rcanal */
+  if (settings.Dfailvoice && global.dfailVoices[type]) {
+    try {
+      await conn.sendMessage(
+        m.chat,
+        {
+          audio: { url: global.dfailVoices[type] },
+          mimetype: 'audio/mpeg',
+          ptt: true,
+          contextInfo: global.rcanal.contextInfo
+        },
+        { quoted: m }
+      )
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  /* 📝 وضع النص + rcanal */
+  if (settings.Dfailtext && textMsg) {
+    return conn
+      .reply(m.chat, textMsg, m, rcanal)
+      .then(_ => m.react('✖️'))
+  }
+}
