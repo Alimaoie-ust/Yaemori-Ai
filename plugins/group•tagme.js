@@ -3,10 +3,10 @@ let handler = async (m, { conn, text }) => {
   let mentionedJid = [m.sender]
   conn.reply(m.chat, tag, m, { contextInfo: { mentionedJid }})
 }
-handler.help = ['منشني']
+handler.help = ['tagme']
 handler.tags = ['group']
-handler.command = /^منشني$/i
+handler.command = ['منشني','tagme']
 
-handler.group = false
+handler.group = true
 
 export default handler

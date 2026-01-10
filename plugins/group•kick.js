@@ -9,7 +9,7 @@ let handler = async (m, { conn, participants, usedPrefix, command }) => {
   m.reply(`✅ تم طرد المستخدم`)
 }
 
-handler.help = ['طرد @user']
+handler.help = ['kick @user']
 handler.tags = ['group']
 handler.command = ['kick', 'طرد']
 handler.admin = true

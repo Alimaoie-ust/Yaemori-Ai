@@ -68,7 +68,7 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
     conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) });
 };
 
-handler.help = ['tagall *<mesaje>*', 'invocar *<mesaje>*'];
+handler.help = ['tagall'];
 handler.tags = ['group'];
 handler.command = ['tagall', 'منشن'];
 handler.admin = true;

@@ -59,9 +59,9 @@ let handler = async (m, { conn, text, participants }) => {
     }
 }
 
-handler.help = ['اضف <212621xxx>']
+handler.help = ['add <212621xxx>']
 handler.tags = ['group']
-handler.command = ['ضف','اضف']
+handler.command = ['ضف','اضف','add']
 handler.admin = true
 handler.group = true
 handler.rowner = false
