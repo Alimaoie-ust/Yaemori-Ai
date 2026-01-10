@@ -40,9 +40,9 @@ let handler = async (m, { conn, usedPrefix, text, isAdmin }) => {
   }
 };
 
-handler.help = ['*201063720595xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'promote ' + v);
+handler.help = ['upadmin'];
 handler.tags = ['group'];
-handler.command = /^(ترقيه)$/i;
+handler.command = ['upadmin','ترقيه','رقي'];
 handler.group = true;
 handler.rowner = true; // التأكد أن الأمر خاص بالمالك
 handler.botAdmin = true; // التأكد أن البوت إداري
