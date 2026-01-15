@@ -1,0 +1,13 @@
+let handler = async (m, { conn, text }) => {
+  let tag = `@${m.sender.replace(/@.+/, '')}`
+  let mentionedJid = [m.sender]
+  conn.reply(m.chat, tag, m, { contextInfo: { mentionedJid }})
+}
+handler.help = ['tagme']
+handler.arabic = ['منشني']
+handler.tags = ['group']
+handler.command = ['منشني','tagme']
+
+handler.group = true
+
+export default handler
