@@ -103,7 +103,7 @@
     "sharp": "^0.32.2",
     "moment-timezone": "latest",
     "qs": "latest",
-    "@google/generative-ai": "latest"
+    "@google/generative-ai": "latest",
     "adm-zip": "latest"
   },
   "optionalDependencies": {
