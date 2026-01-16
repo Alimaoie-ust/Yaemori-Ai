@@ -38,8 +38,7 @@ const isROwner = [...global.owner.map(([number]) => number)]
 const isOwner = isROwner || m.fromMe
 if (!m.isGroup && global.db.data?.settings?.[this.user.jid]?.antiprivate && !isOwner) return
 const isPrems = isROwner || global.db.data.users[m.sender]?.premiumTime > 0
-// قراءة ضغط الزر
-// قراءة كل أنواع ضغط الأزرار
+/*
 if (m.message?.buttonsResponseMessage) {
     m.text = m.message.buttonsResponseMessage.selectedButtonId;
 }
@@ -51,7 +50,7 @@ if (m.message?.listResponseMessage) {
 if (m.message?.templateButtonReplyMessage) {
     m.text = m.message.templateButtonReplyMessage.selectedId;
 }
-
+*/
 if (m.message?.interactiveResponseMessage?.buttonReplyMsg) {
     m.text = m.message.interactiveResponseMessage.buttonReplyMsg.selectedButtonId;
 }
@@ -491,32 +490,37 @@ let hl = _prefix
 let adminMode = global.db.data.chats[m.chat].adminmode
 let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
 if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return   
-if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { //número bot owner
-fail('owner', m, this)
-continue
-}
 if (plugin.rowner && !isROwner) { 
-fail('rowner', m, this)
-continue
+    fail('rowner', m, this)
+    continue
 }
 if (plugin.owner && !isOwner) { 
-fail('owner', m, this)
-continue
+    fail('owner', m, this)
+    continue
 }
 if (plugin.premium && !isPrems) { 
-fail('premium', m, this)
-continue
-} else if (plugin.botAdmin && !isBotAdmin) { 
-fail('botAdmin', m, this)
-continue
-} else if (plugin.admin && !isAdmin) { 
-fail('admin', m, this)
-continue
+    fail('premium', m, this)
+    continue
+}
+if (plugin.group && !m.isGroup) {
+    fail('group', m, this)
+    continue
 }
 if (plugin.private && m.isGroup) {
-fail('private', m, this)
-continue
+    fail('private', m, this)
+    continue
 }
+if (m.isGroup) {
+    if (plugin.admin && !isAdmin) { 
+        fail('admin', m, this)
+        continue
+    }
+    if (plugin.botAdmin && !isBotAdmin) { 
+        fail('botAdmin', m, this)
+        continue
+    }
+}
+
 if (plugin.register == true && _user.registered == false) { 
     global.elnfail(m, this); // هنا فقط unreg
     continue;
@@ -636,9 +640,20 @@ stat.lastSuccess = now
 }}}
 
 try {
-if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
+  if (!opts['noprint']) {
+    const isROwner = [...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, "") + (m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net')).includes(m.sender)
+    const isOwner = isROwner || m.fromMe
+    
+    // ميزة Chatbot/Plugin Detector
+    // إذا كان m.plugin موجوداً، فهذا يعني أن البوت استجاب لأمر معين
+    let isResponded = m.plugin ? "YES" : "NO"
+
+    await (await import(`./lib/print.js`)).default(m, this, chatUpdate, isOwner, isResponded)
+  }
 } catch (e) {
-console.log(m, m.quoted, e)}
+  // هنا تظهر الأخطاء البرمجية لكي تصلحها
+  console.error(e) 
+}
 let settingsREAD = global.db.data.settings[this.user.jid] || {}  
 if (global.db.data?.settings?.[this.user.jid]?.autoread || opts['autoread']) await this.readMessages([m.key])
 }}
@@ -679,11 +694,12 @@ global.dfail = async (type, m, conn) => {
   const settings = global.db.data?.settings?.[conn.user.jid] || {}
 
   const textMsg = {
-    rowner:   '「👑」 هذه الميزة خاصة بمنشئ البوت فقط',
-    owner:    '「👑」 هذه الميزة خاصة بمطوّر البوت',
-    premium:  '「🍧」 هذه الميزة لمستخدمي البريميوم فقط',
-    private:  '「🍭」 هذا الأمر يعمل في الخاص فقط',
-    admin:    '「👑」 هذا الأمر مخصص للمشرفين فقط',
+    rowner:   '「🫅」 هذه الميزة خاصة بمنشئ البوت فقط',
+    owner:    '「🧑‍💻」 هذه الميزة خاصة بمطوّر البوت',
+    premium:  '「💲」 هذه الميزة لمستخدمي البريميوم فقط',
+    private:  '「🙅」 هذا الأمر يعمل في الخاص فقط',
+    group:  '「🍂」 هذا الأمر يعمل في المجموعات فقط',
+    admin:    '「🧑‍🎓」 هذا الأمر مخصص للمشرفين فقط',
     botAdmin: '「🚩」 يجب أن أكون مشرفًا لاستخدام هذا الأمر',
     restrict: '「💫」 هذه الميزة معطّلة حاليًا'
   }[type]
