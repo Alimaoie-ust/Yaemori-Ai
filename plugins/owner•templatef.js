@@ -22,7 +22,8 @@ m.reply(`❌ استخدم:
 }
 
 handler.help = ['templatefail']
-handler.arabic = ['تيمبلات <voice/txt>']
-handler.command = ['templatefail','تيمبلات']
+handler.arabic = ['تخصيص-الاخطاء <voice/txt>']
+handler.tags = ['owner']
+handler.command = ['templatefail','تخصيص-الاخطاء','tempf']
 handler.owner = true
 export default handler

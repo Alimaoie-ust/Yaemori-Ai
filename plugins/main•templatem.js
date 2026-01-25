@@ -14,10 +14,12 @@ let handler = async (m, { text, usedPrefix, command }) => {
   }
 }
 
-handler.help = ['temp']
-handler.arabic = ['غير <list/gif']
+handler.help = ['templatemenu']
+handler.arabic = ['تخصيص-القائمة <list/gif']
 handler.tags = ['main']
-handler.command = ['temp','غير'] 
+handler.command = ['tempm','تخصيص','templatemenu'] 
 handler.register = true
+handler.admin = true
+handler.botadmin = true
 
 export default handler
