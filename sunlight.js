@@ -97,16 +97,19 @@ const question = (texto) => new Promise((resolver) => rl.question(texto, resolve
 
 let opcion
 if (methodCodeQR) {
-opcion = '1'
+    opcion = '1'
+} else if (global.pairing && !fs.existsSync(`./${sessions}/creds.json`)) {
+    // الربط التلقائي بالرقم الموجود في global.pairing
+    opcion = '2'
+    phoneNumber = global.pairing.replace(/[^0-9]/g, '')
+} else if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) {
+    do {
+        opcion = await question(colores('Select an option:\n') + opcionQR('1. With QR\n') + opcionTexto('2. With 8-digit text code\n--> '))
+        if (!/^[1-2]$/.test(opcion)) {
+            console.log(chalk.bold.redBright(`🔴 Selection invalid. Please enter 1 or 2.`))
+        }
+    } while (opcion !== '1' && opcion !== '2')
 }
-if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) {
-do {
-opcion = await question(colores('Select an option:\n') + opcionQR('1. With QR\n') + opcionTexto('2. With 8-digit text code\n--> '))
-
-if (!/^[1-2]$/.test(opcion)) {
-console.log(chalk.bold.redBright(`🔴  NO NUMBERS ARE ALLOWED ${chalk.bold.greenBright("1")} O ${chalk.bold.greenBright("2")}, TAMPOCO LETRAS O SÍMBOLOS ESPECIALES.\n${chalk.bold.yellowBright("TIP: COPY THE OPTION NUMBER AND PASTE IT INTO THE CONSOLE.")}`))
-}} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
-} 
 
 const filterStrings = [
 "Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
