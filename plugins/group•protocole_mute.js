@@ -88,6 +88,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isAdmin }) => {
 
 handler.help = ['unmute']
 handler.arabic = ['اعفاء']
+handler tags = ['group']
 handler.command = /^(unmute|اعفاء)$/i
 handler.admin = true
 handler.group = true
