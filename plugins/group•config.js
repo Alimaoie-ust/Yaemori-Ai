@@ -82,6 +82,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isAdmin }) => {
 
 handler.help = ['protection']
 handler.arabic = ['حماية']
+handler tags = ['group']
 handler.command = /^(حماية|protection)$/i
 handler.admin = true
 handler.group = true
